@@ -4,6 +4,8 @@ import dotenv from 'dotenv';
 import { dbConnection } from './database/dbConnection.js';
 import { errorMiddleware } from './error/error.js';
 import reservationRouter from './routes/reservationRoute.js';
+//*
+import mongoose from "mongoose";
 
 
 const app = express();
@@ -25,7 +27,8 @@ app.use(express.urlencoded({extended:true}));//type of data
 app.use('/api/v1/reservation', reservationRouter);
 //*
 mongoose.connect('mongodb+srv://vishnupriya:xEDpnSHDoscVcTLu@cluster0.lcqhykc.mongodb.net/RESTAURANT?retryWrites=true&w=majority';
-dbConnection();
+//*
+//dbConnection();
 
 app.use(errorMiddleware);
 export default app;
