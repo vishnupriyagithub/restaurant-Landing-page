@@ -24,7 +24,7 @@ app.use(express.json());//converts string to obj
 app.use(express.urlencoded({extended:true}));//type of data
 app.use('/api/v1/reservation', reservationRouter);
 //*
-mongoose.connect('mongodb+srv://vishnupriya:<password>@cluster0.lcqhykc.mongodb.net/?retryWrites=true&w=majority';
+mongoose.connect('mongodb+srv://vishnupriya:xEDpnSHDoscVcTLu@cluster0.lcqhykc.mongodb.net/RESTAURANT?retryWrites=true&w=majority';
 dbConnection();
 
 app.use(errorMiddleware);
