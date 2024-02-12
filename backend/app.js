@@ -11,7 +11,9 @@ dotenv.config({path:'./config/config.env'});
 //to connect backend with frontend we use cors
 app.use(
   cors({
-  origin: [process.env.FRONTEND_URL],
+    //*
+  //origin: [process.env.FRONTEND_URL],
+  origin:["https://deploy-mern-1whq.vercel.app"],
   methods: ["POST"],
   credentials: true,
   })
@@ -21,7 +23,8 @@ app.use(
 app.use(express.json());//converts string to obj
 app.use(express.urlencoded({extended:true}));//type of data
 app.use('/api/v1/reservation', reservationRouter);
-
+//*
+mongoose.connect('mongodb+srv://vishnupriya:<password>@cluster0.lcqhykc.mongodb.net/?retryWrites=true&w=majority';
 dbConnection();
 
 app.use(errorMiddleware);
